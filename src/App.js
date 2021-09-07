@@ -4,20 +4,27 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container">
+          <a class="navbar-brand" href="#">Pokemon</a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            {/* Empty gap */}
+            <ul class="navbar-nav mr-auto">
+            </ul>
+
+            <span class="navbar-text">
+              Sign in
+            </span>
+            
+          </div>
+         </div>
+
+      </nav>
     </div>
   );
 }
