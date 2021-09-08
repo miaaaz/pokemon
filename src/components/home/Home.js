@@ -3,6 +3,7 @@ import TopNavBar from "../navbar/Navbar";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import List from "./List";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
       <div>
         <TopNavBar/>
         <List/>
+        <AmplifySignOut />
 
 
       </div>
@@ -17,4 +19,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withAuthenticator(Home)
