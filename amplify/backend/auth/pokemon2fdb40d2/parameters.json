@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "pokemon296fd335_identitypool_296fd335",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "pokemo296fd335",
-    "userPoolName": "pokemon296fd335_userpool_296fd335",
+    "identityPoolName": "pokemon2fdb40d2_identitypool_2fdb40d2",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "pokemo2fdb40d2",
+    "userPoolName": "pokemon2fdb40d2_userpool_2fdb40d2",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "pokemo296fd335_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "pokemo2fdb40d2_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "296fd335",
-    "resourceName": "pokemon296fd335",
+    "sharedId": "2fdb40d2",
+    "resourceName": "pokemon2fdb40d2",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

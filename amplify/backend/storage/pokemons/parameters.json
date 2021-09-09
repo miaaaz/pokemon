@@ -1,0 +1,7 @@
+{
+    "tableName": "pokemons",
+    "partitionKeyName": "pokemonId",
+    "partitionKeyType": "S",
+    "sortKeyName": "name",
+    "sortKeyType": "S"
+}

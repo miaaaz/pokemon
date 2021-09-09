@@ -1,0 +1,49 @@
+{
+  "paths": [
+    {
+      "name": "/pokemons",
+      "lambdaFunction": "pokemonFunction",
+      "privacy": {
+        "protected": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ],
+        "unauth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/pokemons"
+    }
+  ],
+  "resourceName": "pokemonapi",
+  "apiName": "pokemonapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "pokemonFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 1,
+    "authRoleName": "amplify-pokemon-dev-182820-authRole",
+    "unAuthRoleName": "amplify-pokemon-dev-182820-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "pokemonFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
