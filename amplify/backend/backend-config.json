@@ -24,11 +24,6 @@
     }
   },
   "function": {
-    "catchPokemon": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "pokemonFunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -48,14 +43,32 @@
         }
       ]
     },
-    "fetchPokemons": {
+    "pokeFunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "pokemonDB",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
     }
   },
   "storage": {
     "pokemons": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    },
+    "pokemonDB": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
@@ -68,6 +81,20 @@
         {
           "category": "function",
           "resourceName": "pokemonFunction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "pokeapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "pokeFunction",
           "attributes": [
             "Name",
             "Arn"

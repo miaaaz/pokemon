@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React  from 'react'
 import Pokebrand from '../../images/pokemon_logo_PNG6.png'
 import './Navbar.css'
+import {Link} from "react-router-dom";
 
 const TopNavBar = () => {
 
   return (
       <nav className="navbar navbar-expand-lg shadow-sm rounded">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             <img src={Pokebrand} className={"nav-logo"}/>
-          </a>
+          </Link>
 
           <button className="navbar-toggler" type="button"
                   data-toggle="collapse" data-target="#navbarText"
@@ -23,9 +24,27 @@ const TopNavBar = () => {
             <ul className="navbar-nav mr-auto">
             </ul>
 
-            <span className="navbar-text">
-              Sign in
-            </span>
+            <ul className="navbar-nav ml-auto">
+
+              {/*<li className="nav-item">*/}
+              {/*  <span className="navbar-text">*/}
+              {/*    Sign in*/}
+              {/*  </span>*/}
+              {/*</li>*/}
+
+              <li className="nav-item">
+                <Link
+                    to={"/pocket"}
+                    className="nav-link btn"
+                >
+                  My Pocket
+                </Link>
+              </li>
+            </ul>
+
+
+
+
 
           </div>
         </div>

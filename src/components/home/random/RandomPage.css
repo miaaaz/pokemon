@@ -1,0 +1,14 @@
+.let-it-go-button {
+  background-color: #ffd5d5;
+  /*border: #000000 1px solid;*/
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #e0e0e0;
+}
+
+.let-it-go-button:hover {
+  background-color: #ececec;
+  color: black;
+  /*border: #000000 1px solid;*/
+}
+

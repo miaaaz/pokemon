@@ -16,17 +16,13 @@
         "pokemon2fdb40d2": {}
       },
       "function": {
-        "catchPokemon": {
-          "deploymentBucketName": "amplify-pokemon-dev-182820-deployment",
-          "s3Key": "amplify-builds/catchPokemon-4a3030324f6f357a6561-build.zip"
-        },
         "pokemonFunction": {
           "deploymentBucketName": "amplify-pokemon-dev-182820-deployment",
-          "s3Key": "amplify-builds/pokemonFunction-67783874305630524e77-build.zip"
+          "s3Key": "amplify-builds/pokemonFunction-59352f652f3559514267-build.zip"
         },
-        "fetchPokemons": {
+        "pokeFunction": {
           "deploymentBucketName": "amplify-pokemon-dev-182820-deployment",
-          "s3Key": "amplify-builds/fetchPokemons-73546179436a314e4154-build.zip"
+          "s3Key": "amplify-builds/pokeFunction-6d47734c4f5675396b73-build.zip"
         }
       }
     }

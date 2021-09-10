@@ -1,0 +1,5 @@
+{
+    "tableName": "pokemonDB",
+    "partitionKeyName": "pokemonid",
+    "partitionKeyType": "S"
+}

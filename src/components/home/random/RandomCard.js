@@ -1,13 +1,14 @@
 
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
-import "./Card.css"
-import pokeball from '../../images/Pokeball_icon-icons.com_67533.png'
+import pokeball from '../../../images/Pokeball_icon-icons.com_67533.png'
+import arrow from '../../../images/up-arrow.png'
 import Amplify, {API} from "aws-amplify";
+import "./RandomCard.css"
 
-const Card = ({name, url}) => {
+const RamdomCard = ({id, changePokemon}) => {
 
-  const [id, setId] = useState("")
+  const [name, setName] = useState("")
   const [image, setImage] = useState("")
   const [smallImage, setSmallImage] = useState("")
 
@@ -49,34 +50,53 @@ const Card = ({name, url}) => {
   }
 
   useEffect(() => {
-    fetch(`${url}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(response => response.json())
     .then(pokemon => {
       setImage(pokemon["sprites"]["other"]["official-artwork"]["front_default"])
-      setId(pokemon.id)
+      setName(pokemon.name)
       setSmallImage(pokemon.sprites.front_default)
     })
-  }, [url])
+  }, [id])
 
 
   return (
       <div className={"col"}>
-        <div className="card p-3 mt-1 ms-2 me-2 wbdv-search-result-card">
+        <div className="card p-3 mt-4 mb-3 ms-2 me-2 random-card mr-auto ml-auto shadow">
           <div className="card-body">
 
             <img src={image}
                  className="card-img-top"
-                 alt="..."/>
-            <h6 className="mt-2 card-title"> </h6>
+                 alt="waiting"/>
+
+            <div className={"mt-2"}>
+              <button
+                  onClick={() => changePokemon()}
+                  className={"btn let-it-go-button"}>
+                <img src={arrow}
+                     className="card-img-icon"
+                     alt="..."/>
+                <div>
+                  <span>Let it go</span>
+                </div>
+              </button>
+            </div>
             <button
                 onClick={handleCatch}
-                className={"card-catch-btn"}>
+                className={"btn card-catch-btn mt-3"}>
               <img src={pokeball}
-                   className="card-img-icon mb-2"
+                   className="card-img-icon"
                    alt="..."/>
-              <div>
-                <span className="badge badge-pill badge-info">Catch it!</span>
-              </div>
+             <div>
+               <span>Catch it!</span>
+             </div>
+
+              {/*<img src={pokeball}*/}
+              {/*     className="card-img-icon mb-2"*/}
+              {/*     alt="..."/>*/}
+              {/*<div>*/}
+              {/*  <span className="badge badge-pill badge-info">Catch it!</span>*/}
+              {/*</div>*/}
             </button>
 
 
@@ -96,4 +116,4 @@ const Card = ({name, url}) => {
 
 
 
-export default Card
+export default RamdomCard
