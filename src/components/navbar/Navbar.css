@@ -5,3 +5,12 @@
 .nav-logo {
   height: 80px;
 }
+
+.pocket {
+  font-weight: 800;
+  color: #4a5056;
+}
+
+.pocket:hover {
+  color: #efa716;
+}

@@ -5,8 +5,6 @@ import {
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
-import RandomCard from "./components/home/random/RandomCard";
-import RandomPage from "./components/home/random/RandomPage";
 
 function App() {
   return (
@@ -25,12 +23,7 @@ function App() {
             path={["/pocket"]}>
           <Pocket/>
         </Route>
-        {/* Randomly picked */}
-        <Route
-            exact={true}
-            path={["/random"]}>
-          <RandomPage/>
-        </Route>
+
       </div>
     </Router>
 

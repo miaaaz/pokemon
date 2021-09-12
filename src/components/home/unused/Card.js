@@ -1,9 +1,8 @@
 
 import React, {useEffect, useState} from 'react'
-import {Link} from "react-router-dom";
 import "./Card.css"
-import pokeball from '../../images/Pokeball_icon-icons.com_67533.png'
-import Amplify, {API} from "aws-amplify";
+import pokeball from '../../../images/Pokeball_icon-icons.com_67533.png'
+
 
 const Card = ({name, url}) => {
 

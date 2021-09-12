@@ -12,3 +12,10 @@
   /*border: #000000 1px solid;*/
 }
 
+.random-wrapper {
+  height: 100vh;
+}
+
+.egg {
+  width: 200px;
+}

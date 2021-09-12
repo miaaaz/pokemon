@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {API} from "aws-amplify";
 import Row from "./Row";
 import "./Table.css"
+import pocketService from "../../services/pocket-service"
 
 
 const Table = () => {
@@ -10,30 +10,34 @@ const Table = () => {
 
   const handleFree = (id) => {
 
+    pocketService.deletePokemonById(id)
+
     const newList = pokemons.filter((pokemon) => {return pokemon.pokemonid !== id})
     setPokemons(newList)
-
-    API.del("pokeapi", `/pokemons/${id}`, {
-    }).then(res => {
-      console.log(res)
-      API.get("pokeapi", `/pokemons`, {}).then(all => console.log(all))
-    })
   }
 
   useEffect(() => {
-    API.get("pokeapi", "/pokemons", {})
+    pocketService.getAllPokemonsInPocket()
       .then((all) => setPokemons(all))
   },[])
 
 
   return (
       <div className={"container"}>
-        <table className="table mt-5">
+        <table className="table mt-3">
           <thead>
           <tr>
             <th scope="col table-head"></th>
-            <th scope="col table-head">Owned</th>
-            <th scope="col table-head">Name</th>
+            <th scope="col table-head">
+              <span
+                >Name
+              </span>
+            </th>
+            <th scope="col table-head">
+              <span
+                  >Owned
+              </span>
+            </th>
             <th scope="col table-head"></th>
 
           </tr>

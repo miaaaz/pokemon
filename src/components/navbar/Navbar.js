@@ -1,5 +1,6 @@
 import React  from 'react'
 import Pokebrand from '../../images/pokemon_logo_PNG6.png'
+import ball from '../../images/ultra-ball.png'
 import './Navbar.css'
 import {Link} from "react-router-dom";
 
@@ -9,35 +10,31 @@ const TopNavBar = () => {
       <nav className="navbar navbar-expand-lg shadow-sm rounded">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src={Pokebrand} className={"nav-logo"}/>
+            <img src={Pokebrand} className={"nav-logo"} alt={"pokeball"}/>
           </Link>
 
-          <button className="navbar-toggler" type="button"
-                  data-toggle="collapse" data-target="#navbarText"
-                  aria-controls="navbarText" aria-expanded="false"
-                  aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"/>
-          </button>
 
-          <div className="collapse navbar-collapse" id="navbarText">
+          <div className="" id="navbarText">
             {/* Empty gap */}
             <ul className="navbar-nav mr-auto">
             </ul>
 
             <ul className="navbar-nav ml-auto">
 
-              {/*<li className="nav-item">*/}
-              {/*  <span className="navbar-text">*/}
-              {/*    Sign in*/}
-              {/*  </span>*/}
-              {/*</li>*/}
 
               <li className="nav-item">
+
                 <Link
                     to={"/pocket"}
                     className="nav-link btn"
                 >
-                  My Pocket
+                  <img src={ball}
+                       className="card-img-icon"
+                       alt="pokeball"/>
+                 <span className={"ml-2 pocket"}>
+                   My Pocket
+                 </span>
+
                 </Link>
               </li>
             </ul>
