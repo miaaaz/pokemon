@@ -16,10 +16,6 @@
         "pokemon2fdb40d2": {}
       },
       "function": {
-        "pokemonFunction": {
-          "deploymentBucketName": "amplify-pokemon-dev-182820-deployment",
-          "s3Key": "amplify-builds/pokemonFunction-59352f652f3559514267-build.zip"
-        },
         "pokeFunction": {
           "deploymentBucketName": "amplify-pokemon-dev-182820-deployment",
           "s3Key": "amplify-builds/pokeFunction-6d47734c4f5675396b73-build.zip"
